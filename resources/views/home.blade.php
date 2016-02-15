@@ -10,6 +10,11 @@
                 <div class="panel-body">
                     You are logged in!
                 </div>
+                
+               @foreach ($user->notes as $note)
+               <h3>{{ $note->title }}</h3>
+               @endforeach
+                
             </div>
         </div>
     </div>
