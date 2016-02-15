@@ -10,10 +10,11 @@
                 <div class="panel-body">
                     You are logged in!
                 </div>
-                
+                <ol class="list-group">
                @foreach ($user->notes as $note)
-               <h3>{{ $note->title }}</h3>
+               <li class="list-group-item">{{ $note->title }}</li>
                @endforeach
+               </ol>
                 
             </div>
         </div>
