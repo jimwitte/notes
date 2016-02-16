@@ -12,7 +12,7 @@
 				</div>
 				<div class="list-group">
 					@foreach ($user->notes as $note) 
-					<a href="#" class="list-group-item">
+					<a href="notes/{{$note->id}}" class="list-group-item">
 						{{ $note->title }}
 					</a>
 					@endforeach 
