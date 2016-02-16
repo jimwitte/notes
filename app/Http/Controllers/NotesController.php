@@ -12,6 +12,12 @@ use App\Note;
 
 class NotesController extends Controller
 {
+
+    public function __construct() {
+        $this->middleware('auth');
+    }
+
+
     public function show($note_id) {
     	$user = Auth::user(); // authenticated user
     	$note = Note::findOrFail($note_id);
