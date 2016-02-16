@@ -29,4 +29,9 @@ class NotesController extends Controller
     	$user = Auth::user();
     	return view('notes.create');
     }
+    
+    public function store(Request $request) {
+    	$user = Auth::user();
+    	return $request->all();
+    }
 }
