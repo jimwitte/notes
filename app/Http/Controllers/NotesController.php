@@ -32,6 +32,10 @@ class NotesController extends Controller
     
     public function store(Request $request) {
     	$user = Auth::user();
-    	return $request->all();
+    	$note = new Note;
+    	$note->title = $request->title;
+    	$note->body = $request->body;
+    	$user->notes()->save($note);
+    	return redirect('/home');
     }
 }
