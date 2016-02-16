@@ -19,9 +19,13 @@ class NotesController extends Controller
 
 
     public function show($note_id) {
-    	$user = Auth::user(); // authenticated user
+    	$user = Auth::user();
     	$note = Note::findOrFail($note_id);
         return view('notes.show', compact('user','note'));
 
     }
+    
+    public function create() {
+    	$user = Auth::user();
+    	return view('notes.create');
 }
