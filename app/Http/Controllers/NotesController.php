@@ -38,4 +38,5 @@ class NotesController extends Controller
     	$user->notes()->save($note);
     	return redirect('/home');
     }
+    
 }
