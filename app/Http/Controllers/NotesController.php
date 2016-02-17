@@ -39,4 +39,10 @@ class NotesController extends Controller
     	return redirect('/home');
     }
     
+    public function edit($note_id) {
+    	$user = Auth::user();
+    	$note=Note::findOrFail($note_id);
+    	return view('notes.edit', compact('user','note'));
+    }
+    
 }
