@@ -45,4 +45,8 @@ class NotesController extends Controller
     	return view('notes.edit', compact('user','note'));
     }
     
+    public function update(Request $request, $note_id) {
+    	return $note_id;
+    }
+    
 }

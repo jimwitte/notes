@@ -6,6 +6,8 @@
 	</h1>
 	<form method="POST" action="{{$url = route('notes.update', ['id' => $note->id]) }}">
 	{{ csrf_field() }}
+	{{ method_field('PUT') }}
+	
 		<div class="form-group">
 			<label for="title">Note Title</label>
 			<input type="text" name="title" id="title" value="{{$note->title}}" class="form-control"> 
