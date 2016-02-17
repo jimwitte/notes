@@ -1,1 +1,9 @@
 /* application CSS */
+.notes_inline_block {
+	display: inline-block;
+}
+
+.notes_no_gap {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}

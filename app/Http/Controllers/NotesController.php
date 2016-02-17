@@ -46,7 +46,20 @@ class NotesController extends Controller
     }
     
     public function update(Request $request, $note_id) {
-    	return $note_id;
+    	$user = Auth::user();
+    	$note=Note::findOrFail($note_id);
+    	$note->title = $request->title;
+    	$note->body = $request->body;
+    	$user->notes()->save($note);
+    	return view('notes.show',compact('user','note'));
+    }
+    
+    public function destroy($note_id) {
+        $user = Auth::user();
+    	$note=Note::findOrFail($note_id);
+    	//$note->delete();
+    	return redirect('/home');
+    
     }
     
 }
