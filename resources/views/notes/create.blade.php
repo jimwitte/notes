@@ -1,9 +1,6 @@
 @extends('layouts.app') 
 @section('content') 
 <div class="container">
-	<h1>
-		Create new note
-	</h1>
 	<form method="POST" action="/notes">
 	{{ csrf_field() }}
 		<div class="form-group">
