@@ -15,7 +15,7 @@
 		</small> 
 	</div>
 	<div style="margin-top: 1.5em;">
-		{{$note->body}} 
+		{!!Markdown::convertToHtml($note->body)!!} 
 	</div>
 </div>
 @endsection 
