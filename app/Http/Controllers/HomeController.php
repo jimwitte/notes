@@ -28,6 +28,8 @@ class HomeController extends Controller
     {
     	// show the user home page
     	$user = Auth::user(); // authenticated user
-        return view('home', compact('user'));
+    	$notes = $user->notes()->latest('updated_at')->get();
+    	
+        return view('home', compact('user','notes'));
     }
 }

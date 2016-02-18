@@ -11,7 +11,7 @@
 					You are logged in! 
 				</div>
 				<div class="list-group">
-					@foreach ($user->notes as $note)
+					@foreach ($notes as $note)
 					<a href="{{$url = route('notes.show', ['id' => $note->id]) }}" class="list-group-item">
 						{{ $note->title }}
 					</a>
