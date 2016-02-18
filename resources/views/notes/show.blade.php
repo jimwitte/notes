@@ -24,7 +24,8 @@
 		{{$note->title}} 
 	</h1>
 	<small>
-		<p>{{$note->updated_at}}</p>
+		<p>{{date_format($note->updated_at, 'Y-m-d H:i:s')}}<br />
+		{{ $note->updated_at->diffForHumans()}}</p>
 	</small>
 </div>
 <div>
