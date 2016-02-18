@@ -22,7 +22,6 @@ class NotesController extends Controller
     	$user = Auth::user();
     	$note = Note::findOrFail($note_id);
         return view('notes.show', compact('user','note'));
-
     }
     
     public function create() {
@@ -33,8 +32,8 @@ class NotesController extends Controller
     public function store(Request $request) {
     	$user = Auth::user();
     	$note = new Note;
-    	$note->title = $request->title;
     	$note->body = $request->body;
+    	$note->title = strtok($note->body,"\n");
     	$user->notes()->save($note);
     	return redirect('/home');
     }
@@ -48,8 +47,8 @@ class NotesController extends Controller
     public function update(Request $request, $note_id) {
     	$user = Auth::user();
     	$note=Note::findOrFail($note_id);
-    	$note->title = $request->title;
     	$note->body = $request->body;
+    	$note->title = strtok($note->body,"\n");
     	$user->notes()->save($note);
     	return view('notes.show',compact('user','note'));
     }
@@ -57,7 +56,7 @@ class NotesController extends Controller
     public function destroy($note_id) {
         $user = Auth::user();
     	$note=Note::findOrFail($note_id);
-    	//$note->delete();
+    	$note->delete();
     	return redirect('/home');
     
     }
