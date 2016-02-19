@@ -28,7 +28,7 @@ class HomeController extends Controller
     {
     	// show the user home page
     	$user = Auth::user(); // authenticated user
-    	$notes = $user->notes()->latest('updated_at')->get();
+    	$notes = $user->notes()->latest('updated_at')->paginate(5);
     	
         return view('home', compact('user','notes'));
     }

@@ -15,6 +15,7 @@
 					@endforeach 
 				</div>
 			</div>
+			{!! $notes->render() !!}
 		</div>
 	</div>
 </div>
