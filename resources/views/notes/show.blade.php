@@ -1,8 +1,9 @@
 @extends('layouts.app') @section('content') 
 <div class="container">
+	<div class="col-md-10 col-md-offset-1">
 	<div style="line-height: .9em;">
 	</form>
-	<a class="btn btn-primary notes_inline_block" title="edit" href="{{$url = route('notes.edit', ['id' => $note->id]) }}" role="button">
+	<a class="btn btn-success notes_inline_block" title="edit" href="{{$url = route('notes.edit', ['id' => $note->id]) }}" role="button">
 		<span class="glyphicon glyphicon-edit" aria-hidden="true">
 			Edit 
 		</span>
@@ -23,5 +24,6 @@
 	<div style="margin-top: 1.5em;">
 		{!!Markdown::convertToHtml($note->body)!!} 
 	</div>
+</div>
 </div>
 @endsection 

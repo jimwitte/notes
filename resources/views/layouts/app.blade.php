@@ -10,6 +10,7 @@
     <!-- Fonts -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
+   	<link rel="stylesheet" type="text/css" media="screen" href="/bootstrap-markdown.min.css">
     <link href="/notes.css" rel='stylesheet' type='text/css'>
 
 
@@ -80,6 +81,8 @@
     <!-- JavaScripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    
+    <script src="/js/markdown.js"></script>
+    <script src="/js/bootstrap-markdown.js"></script>
+    <script src="/js/to-markdown.js"></script>
 </body>
 </html>
