@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 
 use Auth;
 use App\Note;
+use App\Http\Requests\NoteRequest;
 
 class NotesController extends Controller
 {
@@ -29,7 +30,7 @@ class NotesController extends Controller
     	return view('notes.create');
     }
     
-    public function store(Request $request) {
+    public function store(NoteRequest $request) {
     	$user = Auth::user();
     	$note = new Note;
     	$note->body = $request->body;
@@ -44,7 +45,7 @@ class NotesController extends Controller
     	return view('notes.edit', compact('user','note'));
     }
     
-    public function update(Request $request, $note_id) {
+    public function update(NoteRequest $request, $note_id) {
     	$user = Auth::user();
     	$note=Note::findOrFail($note_id);
     	$note->body = $request->body;
