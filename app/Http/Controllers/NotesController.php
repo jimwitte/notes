@@ -36,6 +36,7 @@ class NotesController extends Controller
     	$note->body = $request->body;
     	$note->title = strtok($note->body,"\n");
     	$user->notes()->save($note);
+    	\Session::flash('flash_message','Note created.');
     	return redirect('/home');
     }
     
@@ -51,6 +52,7 @@ class NotesController extends Controller
     	$note->body = $request->body;
     	$note->title = strtok($note->body,"\n");
     	$user->notes()->save($note);
+    	\Session::flash('flash_message','Note updated.');
     	return view('notes.show',compact('user','note'));
     }
     

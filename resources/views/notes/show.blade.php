@@ -24,6 +24,7 @@
 	<div style="margin-top: 1.5em;">
 		{!!Markdown::convertToHtml($note->body)!!} 
 	</div>
+	@include('notes._flash')
 </div>
 </div>
 @endsection 

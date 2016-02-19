@@ -16,6 +16,7 @@
 				</div>
 			</div>
 			{!! $notes->render() !!}
+			@include('notes._flash')
 		</div>
 	</div>
 </div>
