@@ -11,6 +11,8 @@ use Auth;
 use App\Note;
 use App\Http\Requests\NoteRequest;
 
+use Session;
+
 class NotesController extends Controller
 {
 
@@ -36,8 +38,8 @@ class NotesController extends Controller
     	$note->body = $request->body;
     	$note->title = strtok($note->body,"\n");
     	$user->notes()->save($note);
-    	\Session::flash('flash_message','Note created.');
-    	return redirect('/home');
+    	Session::flash('flash_message','Note created.');
+    	return view('notes.show',compact('user','note'));
     }
     
     public function edit($note_id) {
@@ -52,7 +54,7 @@ class NotesController extends Controller
     	$note->body = $request->body;
     	$note->title = strtok($note->body,"\n");
     	$user->notes()->save($note);
-    	\Session::flash('flash_message','Note updated.');
+    	Session::flash('flash_message','Note updated.');
     	return view('notes.show',compact('user','note'));
     }
     
