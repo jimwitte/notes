@@ -38,7 +38,7 @@ class NotesController extends Controller
     	$note->body = $request->body;
     	$note->title = strtok($note->body,"\n");
     	$user->notes()->save($note);
-
+    	$note->tag($request->tags);
     	Session::flash('flash_message','Note created.');
     	return view('notes.show',compact('user','note'));
     }

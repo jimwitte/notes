@@ -20,7 +20,7 @@
 				<label for="tags">
 					Tags 
 				</label>
-				TAGS here
+				<input type="text" name="tags" id="tags" class="form-control"> 
 			</div>
 		</form>
 		@include('errors.list') 
