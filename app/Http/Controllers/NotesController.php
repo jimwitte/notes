@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 
 use Auth;
 use App\Note;
+use App\Tag;
 use App\Http\Requests\NoteRequest;
 
 use Session;
@@ -29,7 +30,8 @@ class NotesController extends Controller
     
     public function create() {
     	$user = Auth::user();
-    	return view('notes.create');
+    	$tags = Tag::lists('name','id');
+    	return view('notes.create', compact('tags'));
     }
     
     public function store(NoteRequest $request) {
@@ -37,7 +39,9 @@ class NotesController extends Controller
     	$note = new Note;
     	$note->body = $request->body;
     	$note->title = strtok($note->body,"\n");
+    	$tagIds = $request->input('note_tags');
     	$user->notes()->save($note);
+    	$note->tags()->attach($tagIds);
     	Session::flash('flash_message','Note created.');
     	return view('notes.show',compact('user','note'));
     }

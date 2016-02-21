@@ -10,4 +10,12 @@ class Note extends Model
 		'title',
 		'body'
 	];
+	
+	public function user() {
+		return $this->belongsTo('App\User');
+	}
+	
+	public function tags() {
+		return $this->belongsToMany('App\Tag')->withTimestamps();
+	}
 }
