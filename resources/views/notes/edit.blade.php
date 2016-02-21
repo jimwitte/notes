@@ -16,6 +16,12 @@
 				</label>
 <textarea data-provide="markdown" name="body" id="body" class="form-control" rows="20">{{ $note->body }}</textarea> 
 			</div>
+			<div class="form-group">
+				<label for="tags">
+					Tags 
+				</label>
+				<input type="text" name="tags" value="{{ implode(', ', $note->tagNames()) }}" id="tags" class="form-control">
+			</div>
 		</form>
 		@include('errors.list') 
 	</div>

@@ -24,10 +24,7 @@
 	<div style="margin-top: 1.5em;">
 		{!!Markdown::convertToHtml($note->body)!!} 
 	</div>
-	Tags: 
-	@foreach ($note->tags as $tag)
-	{{$tag->name}} 
-	@endforeach
+	Tags: {{ implode(',  ',$note->tagNames()) }}
 	@include('notes._flash')
 </div>
 </div>

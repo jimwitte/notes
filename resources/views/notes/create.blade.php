@@ -20,13 +20,7 @@
 				<label for="tags">
 					Tags 
 				</label>
-				<select multiple name="note_tags[]" id="tags" class="form-control">
-					@foreach ($tags as $tag_id => $tag) 
-					<option value="{{$tag_id}}">
-						{{$tag}}
-					</option>
-					@endforeach 
-				</select>
+				TAGS here
 			</div>
 		</form>
 		@include('errors.list') 

@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Note extends Model
 {
+
+use \Conner\Tagging\Taggable;
+
 	protected $fillable = [
 		'title',
 		'body'
@@ -15,7 +18,7 @@ class Note extends Model
 		return $this->belongsTo('App\User');
 	}
 	
-	public function tags() {
-		return $this->belongsToMany('App\Tag')->withTimestamps();
-	}
+// 	public function tags() {
+// 		return $this->belongsToMany('App\Tag')->withTimestamps();
+// 	}
 }
