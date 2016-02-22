@@ -40,4 +40,11 @@ Installation
 * create database tables using migrations (php artisan migrate)
 * to send mail, you'll need to check the email configuration at: app/config/mail.php.
 
+Screenshots
+-----------
+![Welcome page](docs/screenshots/welcome.jpg)  
+![Login page](docs/screenshots/login.jpg)  
+![Index page](docs/screenshots/index.jpg)  
+![Show note page](docs/screenshots/show.jpg)  
+![Edit note page](docs/screenshots/welcome.jpg)
 
