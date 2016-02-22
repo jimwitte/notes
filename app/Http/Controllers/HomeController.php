@@ -6,6 +6,8 @@ use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Note;
 use Auth;
+use App\Http\Requests\NoteRequest;
+
 
 class HomeController extends Controller
 {
@@ -24,12 +26,19 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
     	// show the user home page
     	$user = Auth::user(); // authenticated user
-    	$notes = $user->notes()->latest('updated_at')->paginate(5);
+    	$tags = Note::existingTags()->sortBy('slug');
     	
-        return view('home', compact('user','notes'));
+    	$filter = $request->f;
+				
+		if ($filter !== null) {
+			$notes = $user->notes()->withAnyTag($filter)->latest('updated_at')->paginate(5);
+		} else {
+		    $notes = $user->notes()->latest('updated_at')->paginate(5);
+		}		
+		return view('home', compact('user','notes','tags'));
     }
 }
