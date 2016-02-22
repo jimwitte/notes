@@ -39,6 +39,6 @@ class HomeController extends Controller
 		} else {
 		    $notes = $user->notes()->latest('updated_at')->paginate(5);
 		}		
-		return view('home', compact('user','notes','tags'));
+		return view('home', compact('user','notes','tags','filter'));
     }
 }
