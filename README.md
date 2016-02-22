@@ -1,14 +1,15 @@
 Notes
 ======
-a web application for keeping and organizing notes
+a web application for keeping and organizing notes  
 
-author: Jim Witte jim@thunderingbison.com  
-date: Feb 22 2016
+**author**: Jim Witte jim@thunderingbison.com  
+**date**: Feb 22 2016
 
 About
 -----
-I wrote this app as a project to become familiar with the Laravel framework. I used Laravel 5.2, along with several composer packages including:
+**Notes** was written as a project to become familiar with the Laravel framework. 
 
+* Laravel 5.2 <http://www.laravel.com>
 * graham-campbell/markdown : provides a markdown editor integrated with bootstrap
 * rtconner/laravel-tagging : provides database and methods for tagging objects in Laravel
 
