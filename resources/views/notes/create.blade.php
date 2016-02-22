@@ -1,6 +1,6 @@
 @extends('layouts.app') @section('content') 
 <div class="container">
-	<div class="col-md-10 col-md-offset-1">
+	<div class="col-md-10">
 		<form method="POST" action="{{$url = route('notes.store') }}">
 			{{ csrf_field() }} 
 			<div class="form-group">
