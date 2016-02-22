@@ -14,7 +14,7 @@
 				<label for="body">
 					Note Body 
 				</label>
-<textarea data-provide="markdown" name="body" id="body" class="form-control" rows="20">{{ $note->body }}</textarea> 
+<textarea data-provide="markdown" name="body" id="body" class="form-control" rows="12">{{ $note->body }}</textarea> 
 			</div>
 			<div class="form-group">
 				<label for="tags">
