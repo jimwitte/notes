@@ -24,7 +24,8 @@ class NotesController extends Controller
     public function show($note_id) {
     	$user = Auth::user();
     	$note = Note::findOrFail($note_id);
-    	if ($user->id !== $note->user_id ) {
+    	if ($user->id != $note->user_id) {
+    		return redirect('/home');
     	} else { 
         	return view('notes.show', compact('user','note'));
         }
@@ -49,7 +50,7 @@ class NotesController extends Controller
     public function edit($note_id) {
     	$user = Auth::user();
     	$note=Note::findOrFail($note_id);
-    	if ($user->id !== $note->user_id ) {
+    	if ($user->id != $note->user_id) {
     		return redirect('/home');
     	} else { 
 	    	return view('notes.edit', compact('user','note'));
